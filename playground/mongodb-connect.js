@@ -6,13 +6,13 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
 
     const db = client.db('TodoApp')
 
-    // db.collection('Todos').insertOne({
-    //     text: "A todo item",
-    //     completed: false
-    // }, (err, result) => {
-    //     if (err) return console.log('Failed to insert record into collection', err)
-    //     console.log('The result is', JSON.stringify(result.ops, undefined, 4))
-    // })
+    db.collection('Todos').insertOne({
+        text: "A todo item number 5",
+        completed: true
+    }, (err, result) => {
+        if (err) return console.log('Failed to insert record into collection', err)
+        console.log('The result is', JSON.stringify(result.ops, undefined, 4))
+    })
 
     client.close()
 })
